@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# Data & artifacts
+src/data/
+models/
+outputs/
+
+# Editors
+.vscode/
+.idea/
