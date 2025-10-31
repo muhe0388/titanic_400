@@ -1,5 +1,5 @@
 # titanic_400
-Titanic Survival Prediction Project (Python + R)
+## Titanic Survival Prediction Project (Python + R)
 
 This project predicts passenger survival from the Titanic dataset.
 I used Python and R, and made Docker images for both so the grader can run everything easily.
@@ -7,6 +7,7 @@ The assignment goals: download data, clean it, train a model, and produce predic
 
 Data is not included in this repo (required by the assignment).
 
+```text
 src/
  ├── app/               # Python code
  │   └── run_pipeline.py
@@ -17,27 +18,31 @@ src/
 
 models/                 # saved models (ignored)
 outputs/                # predictions (ignored)
+```
 
-Download Data (Required)
+## Download Data (Required)
 
-1) Make sure Kaggle API key exists
+#### 1) Make sure Kaggle API key exists
 
 Move kaggle.json to: ~/.kaggle/kaggle.json
 
 Then run: chmod 600 ~/.kaggle/kaggle.json
 
-2) Download Titanic dataset
+#### 2) Download Titanic dataset
 
 kaggle competitions download -c titanic -p src/data/
 unzip -o src/data/*.zip -d src/data/
 
 Files expected in src/data/:
+```text
     train.csv
     test.csv
     gender_submission.csv
+```
 
 Run Python version
     Local
+```text
     pip install -r requirements.txt
     python src/app/run_pipeline.py
     Creates:
@@ -51,8 +56,9 @@ Run Python version
     -v "$(pwd)/models:/app/models" \
     -v "$(pwd)/outputs:/app/outputs" \
     titanic-python
+```
 
-
+```text
 Run R version (Docker)
     docker build -f src/r/Dockerfile -t titanic-r .
     docker run --rm \
@@ -62,11 +68,11 @@ Run R version (Docker)
 
     Creates:
     outputs/submission_r.csv
-
+```
     
 What the code does
 
-Both pipelines:
+#### Both pipelines:
 	•	Read train.csv
 	•	Add a simple feature (FamilySize)
 	•	Fill missing values
@@ -79,7 +85,7 @@ Note: Kaggle does not give test labels, so true test accuracy cannot be calculat
 
 ⸻
 
-✅ Notes for grader
+#### Notes for grader
 	•	No dataset stored in repo
 	•	Clear instructions to download data and run
 	•	Both Python & R pipelines tested
