@@ -85,13 +85,5 @@ Note: Kaggle does not give test labels, so true test accuracy cannot be calculat
 
 ⸻
 
-#### Notes for grader
-	•	No dataset stored in repo
-	•	Clear instructions to download data and run
-	•	Both Python & R pipelines tested
-	•	Docker works for both
-	•	Print statements show each step in the pipeline
 
-⸻
 
-This finishes the project setup and execution as required.
