@@ -40,8 +40,7 @@ Files expected in src/data/:
     gender_submission.csv
 ```
 
-Run Python version
-    Local
+##### Run Python version  Local
 ```text
     pip install -r requirements.txt
     python src/app/run_pipeline.py
@@ -58,8 +57,9 @@ Run Python version
     titanic-python
 ```
 
+
+##### Run R version (Docker)
 ```text
-Run R version (Docker)
     docker build -f src/r/Dockerfile -t titanic-r .
     docker run --rm \
     -v "$(pwd)/src/data:/app/src/data" \
@@ -73,13 +73,13 @@ Run R version (Docker)
 What the code does
 
 #### Both pipelines:
-	•	Read train.csv
-	•	Add a simple feature (FamilySize)
-	•	Fill missing values
-	•	Train logistic regression
-	•	Print training + validation accuracy
-	•	Predict test.csv
-	•	Save predictions in outputs/
+•	Read train.csv
+•	Add a simple feature (FamilySize)
+•	Fill missing values
+•	Train logistic regression
+•	Print training + validation accuracy
+•	Predict test.csv
+•	Save predictions in outputs/
 
 Note: Kaggle does not give test labels, so true test accuracy cannot be calculated.
 
